@@ -1,0 +1,23 @@
+{
+  "name": "modelagem-dominio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --respawn --ignore-watch node_modules src/index.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.27",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.2"
+  }
+}
