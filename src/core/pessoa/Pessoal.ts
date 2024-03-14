@@ -1,6 +1,12 @@
+import Id from "../shared/Id";
+import NomePessoa from "../shared/NomePessoa";
+
 export default class Pessoa {
-    constructor (
-        public nome: string,
-        public id?: string
-    ) {}
+  readonly id: Id;
+  readonly nome: NomePessoa;
+
+  constructor(nome: string, id?: string) {
+    this.nome = new NomePessoa(nome);
+    this.id = new Id(id);
+  }
 }
