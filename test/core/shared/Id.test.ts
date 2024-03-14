@@ -18,3 +18,26 @@ test('Deve criar um novo id válido a partir de um id existente', () => {
     expect(id.valor).toHaveLength(36)
     expect(id.novo).toBeFalsy()
 })
+
+test('Deve comparar dois ids como iguais', () => {
+    const id1 = new Id()
+    const id2 = new Id(id1.valor)
+
+    expect(id1.igual(id2)).toBe(true)
+    expect(id1.diferente(id2)).toBe(false)
+})
+
+test('Deve comparar dois ids como diferentes', () => {
+    const id1 = new Id()
+    const id2 = new Id()
+
+    expect(id1.igual(id2)).toBe(false)
+    expect(id1.diferente(id2)).toBe(true)
+})
+
+test('Deve comparar um id com undefined', () => {
+    const id1 = new Id()
+
+    expect(id1.igual(undefined as any)).toBe(false)
+    expect(id1.diferente(undefined as any)).toBe(true)
+})

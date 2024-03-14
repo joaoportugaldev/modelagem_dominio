@@ -3,6 +3,7 @@ import NomePessoa from "@/core/shared/NomePessoa"
 
 test('Deve lançar erro ao tentar criar nome vazio', () => {
     expect(() => new NomePessoa('')).toThrow(Erros.NOME_VAZIO)
+    expect(() => new NomePessoa(undefined)).toThrow(Erros.NOME_VAZIO)
 })
 
 test('Deve lançar erro ao tentar criar nome menor que 4 caracteres', () => {
