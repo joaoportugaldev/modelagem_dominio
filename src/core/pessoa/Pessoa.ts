@@ -8,7 +8,11 @@ export interface PessoaProps extends EntidadesProps {
     cpf?: string
 }
 
-export default class Pessoa extends Entidade<PessoaProps> {
+// Ao passar <Pessoa, PessoaProps> estamos resolvendo o generics que foi
+// passado na classe Entidade
+// Para entender onde Pessoa e PessoaProps estão sendo usados por Entidade
+// Acesse o código de Entidade
+export default class Pessoa extends Entidade<Pessoa, PessoaProps> {
     readonly nome: NomePessoa
     readonly cpf: Cpf
 
@@ -16,12 +20,5 @@ export default class Pessoa extends Entidade<PessoaProps> {
         super(props)
         this.nome = new NomePessoa(props.nome)
         this.cpf = new Cpf(props.cpf)
-    }
-
-    clone(novasProps: PessoaProps) {
-        return new Pessoa({
-            ...this.props,
-            ...novasProps, // o que vai ficar é sempre o útlimo, novasProps tem preferências sobre this.props
-        })
     }
 }
